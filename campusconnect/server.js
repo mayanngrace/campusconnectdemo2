@@ -17,10 +17,22 @@ app.use(express.static(path.join(__dirname, "public")));
 // ==============================
 // 🆕 Session Middleware
 // ==============================
+// app.use(session({
+//     secret: "secret123",
+//     resave: false,
+//     saveUninitialized: true
+// }));
+
+app.set("trust proxy", 1);
+
 app.use(session({
-    secret: "secret123",
+    secret: "campus_secret_123",
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: false,
+    cookie: {
+        secure: true,
+        sameSite: "none"
+    }
 }));
 
 // ==============================
