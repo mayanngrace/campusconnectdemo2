@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const session = require("express-session");
@@ -26,10 +27,15 @@ app.use(session({
 // ==============================
 // MongoDB Connection
 // ==============================
-mongoose.connect("mongodb://127.0.0.1:27017/communityDB")
+// mongoose.connect("mongodb://127.0.0.1:27017/communityDB")
+//     .then(() => console.log("MongoDB Connected"))
+//     .catch(err => console.log(err));
+
+require("dotenv").config();
+
+mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("MongoDB Connected"))
     .catch(err => console.log(err));
-
 
 // ==============================
 // Schema + Model
