@@ -1,4 +1,3 @@
-require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const session = require("express-session");
@@ -23,7 +22,6 @@ app.use(session({
     saveUninitialized: true
 }));
 
-
 // ==============================
 // MongoDB Connection
 // ==============================
@@ -32,7 +30,6 @@ app.use(session({
 //     .catch(err => console.log(err));
 
 require("dotenv").config();
-
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("MongoDB Connected"))
     .catch(err => console.log(err));
@@ -46,7 +43,6 @@ const postSchema = new mongoose.Schema({
 });
 
 const Post = mongoose.model("Post", postSchema);
-
 
 // ==============================
 // AUTH MIDDLEWARE
