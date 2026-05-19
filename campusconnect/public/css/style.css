@@ -1,0 +1,237 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    background-image: url('../images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Typography Variables */
+:root {
+    --maroon: #8A0A0A;
+    --green: #1A8C16;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.navbar .nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav-logo {
+    height: 50px;
+    margin-right: 40px;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: var(--maroon);
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.navbar .nav-right .logout-btn {
+    background-color: var(--maroon);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.navbar .nav-right .logout-btn:hover {
+    background-color: #630c0c;
+}
+
+/* Page Container */
+.container {
+    padding: 20px 80px;
+    flex-grow: 1;
+}
+
+/* Titles */
+.page-title {
+    color: var(--maroon);
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Glassmorphism Dashboard Cards Grid */
+.dashboard-grid {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.glass-card {
+    position: relative;
+    width: 260px;
+    height: 160px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.glass-card .card-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--green);
+    color: white;
+    font-weight: bold;
+    padding: 6px 20px;
+    border-radius: 6px;
+    border: 2px solid #084013;
+    font-size: 16px;
+}
+
+.card-desc {
+    padding: 0 20px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #0A3D18;
+}
+
+/* General Layout helpers */
+.horizontal-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* Community Controls */
+.community-controls {
+    display: flex;
+    gap: 15px;
+}
+
+.community-controls input, .community-controls select {
+    padding: 8px 12px;
+    border: 2px solid black;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    outline: none;
+}
+
+/* Community Post Add */
+.add-post-section {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.add-post-section input, .add-post-section select {
+    padding: 8px 12px;
+    border: 2px solid black;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    outline: none;
+}
+
+.add-post-section input {
+    width: 250px;
+}
+
+.add-post-btn {
+    background-color: var(--green);
+    color: white;
+    font-weight: bold;
+    border: 2px solid #084013;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Post List */
+.post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.post-item {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-item-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.post-item-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+}
+
+.post-item-category {
+    background-color: var(--green);
+    color: white;
+    font-weight: bold;
+    padding: 4px 15px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+.post-item-delete {
+    background-color: var(--maroon);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 6px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 12px;
+}

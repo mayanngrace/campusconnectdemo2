@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="/images/logo.png" class="nav-logo" alt="Logo">
+            <div class="nav-links">
+                <a href="/">DASHBOARD</a>
+                <a href="/about">ABOUT</a>
+                <a href="/courses">COURSES</a>
+                <a href="/student">PROFILE</a>
+                <a href="/community">COMMUNITY</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="/logout"><button class="logout-btn">Logout</button></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 id="dashboard-title" class="page-title">WELCOME, STUDENT</h1>
+
+        <div class="dashboard-grid">
+            <a href="/about" class="card-link">
+                <div class="glass-card">
+                    <div class="card-badge">About</div>
+                    <p class="card-desc">Learn more about Campus Connect.</p>
+                </div>
+            </a>
+            <a href="/courses" class="card-link">
+                <div class="glass-card">
+                    <div class="card-badge">Courses</div>
+                    <p class="card-desc">View your enrolled courses.</p>
+                </div>
+            </a>
+            <a href="/student" class="card-link">
+                <div class="glass-card">
+                    <div class="card-badge">Profile</div>
+                    <p class="card-desc">Manage your student profile.</p>
+                </div>
+            </a>
+            <a href="/community" class="card-link">
+                <div class="glass-card">
+                    <div class="card-badge">Community</div>
+                    <p class="card-desc">Connect and share with others.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        fetch('/me')
+            .then(res => res.json())
+            .then(user => {
+                if (user && user.role === 'admin') {
+                    document.getElementById('dashboard-title').innerText = 'WELCOME, ADMIN';
+                }
+            })
+            .catch(err => console.error("Error fetching user data", err));
+    </script>
+</body>
+
+</html>

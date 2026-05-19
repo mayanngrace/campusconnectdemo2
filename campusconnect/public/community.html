@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Community</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="/images/logo.png" class="nav-logo" alt="Logo">
+            <div class="nav-links">
+                <a href="/">DASHBOARD</a>
+                <a href="/about">ABOUT</a>
+                <a href="/courses">COURSES</a>
+                <a href="/student">PROFILE</a>
+                <a href="/community">COMMUNITY</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="/logout"><button class="logout-btn">Logout</button></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="horizontal-layout">
+            <h1 class="page-title" style="margin-bottom: 0;">COMMUNITY POSTS</h1>
+            
+            <div class="community-controls">
+                <input id="searchTitle" placeholder="Search by title..." oninput="loadPosts()">
+                <select id="filterCategory" onchange="loadPosts()">
+                    <option value="All">All Categories</option>
+                    <option value="Task">Task</option>
+                    <option value="Service">Service</option>
+                    <option value="Selling">Selling</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="addPostSection" class="add-post-section">
+            <input id="title" placeholder="Post title">
+            <select id="category">
+                <option>Task</option>
+                <option>Service</option>
+                <option>Selling</option>
+            </select>
+            <button class="add-post-btn" onclick="addPost()">+ Add Post</button>
+        </div>
+
+        <ul id="postList" class="post-list"></ul>
+    </div>
+
+    <script src="/js/community.js"></script>
+
+</body>
+
+</html>
